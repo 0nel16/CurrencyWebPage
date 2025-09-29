@@ -5,7 +5,7 @@
 html, body{
     height: 100%;
     margin: 0;
-    background: #3a3a3a;
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
 }
 
 .container {
@@ -17,7 +17,7 @@ html, body{
 }
 
 .card {
-    background: #717171;
+    background: linear-gradient(145deg, #1e293b, #111827);
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 8px;
     padding: 12px;
