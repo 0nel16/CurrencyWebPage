@@ -137,6 +137,9 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+<<<<<<< HEAD
 
 # DS Store
+=======
+>>>>>>> 4585c27 (Ignore .DS_Store)
 .DS_Store
