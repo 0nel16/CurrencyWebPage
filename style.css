@@ -29,6 +29,7 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
 }
 
 .main {
@@ -47,4 +48,70 @@ html, body{
     flex: 1 1 auto;
     min-width: 0;
     background: #717171;
+}
+
+.headerBrand{
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.headerBrand:hover{
+    text-shadow: 0 0 6px rgba(59,130,246,0.6), 0 0 12px rgba(124,58,237,0.4);
+    transform: scale(1.1);
+}
+
+.headerBrand .fx{
+    color: #3b82f6;
+}
+
+.headerBrand .hub{
+    color: #a78bfa;
+}
+
+.exchangeRates{
+    display: flex;
+    flex: 1 1 auto;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cardRates{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+#btnAccount{
+    margin: 10px;
+    padding: 15px 30px;
+    box-shadow: 0px 0px 18px -3px rgba(139, 92, 246, 0.9);    background-image: linear-gradient(45deg, #3b82f6 0%, #7c3aed 51%, #3b82f6 100%);
+    border: 0px;
+    border-radius: 25px;
+    color: white;
+    background-size: 200% auto;
+    cursor: pointer;
+    transition: 0.5s;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+#btnAccount:hover{
+    background-position: center right;
+    filter: brightness(1.15);
+}
+
+#btnAccount:active{
+    transform: scale(1);
 }
