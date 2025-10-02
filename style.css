@@ -153,3 +153,129 @@ html, body{
 .footerSocial a:hover{
     color: #3b82f6;
 }
+
+.sidebar h2{
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.favoritesList{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.favoriteItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.favoriteItem:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.removeBtn{
+    background: none;
+    border: none;
+    color: #f87171;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.removeBtn:hover{
+    color: #ef4444;
+}
+
+.content h2{
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.converter{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.converterRow{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.converterRow select, 
+.converterRow input{
+    display: flex;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    flex: 1;
+}
+
+.converterActions button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #3b82f6, #7c3aed);
+    color: #ffffff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.converterActions button:hover{
+    filter: brightness(1.15);
+}
+
+.converterActions{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+.exchangeRateDisplay{
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.resultBox {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+@media (max-width: 1024px){
+    .exchangeRates{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 480px){
+
+}

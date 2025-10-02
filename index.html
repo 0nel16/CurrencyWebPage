@@ -24,8 +24,61 @@
             <div><a href="account.html" id="btnAccount">My Account</a></div>
         </header>
         <main class="main">
-            <aside class="card sidebar"></aside>
-            <section class="card content"></section>
+            <aside class="card sidebar">
+                <h2>Favorites</h2>
+                <div class="favoritesList">
+                    <div class="favoriteItem">
+                        <span>EUR/USD</span>
+                        <button class="removeBtn">x</button>
+                    </div>
+                    <div class="favoriteItem">
+                        <span>GBP/USD</span>
+                        <button class="removeBtn">x</button>
+                    </div>
+                    <div class="favoriteItem">
+                        <span>USD/JPY</span>
+                        <button class="removeBtn">x</button>
+                    </div>
+                    <div class="favoriteItem">
+                        <span>AUD/USD</span>
+                        <button class="removeBtn">x</button>
+                    </div>
+                    <div class="favoriteItem">
+                        <span>CAD/USD</span>
+                        <button class="removeBtn">x</button>
+                    </div>
+                </div>
+            </aside>
+            <section class="card content">
+                <h2>Currency Converter</h2>
+                <div class="converter">
+                    <div class="converterRow">
+                        <select id="fromCurrency">
+                            <option value="EUR">EUR</option>
+                            <option value="USD">USD</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                        </select>
+                        <input type="number" id="amount" placeholder="Enter amount">
+                        <select id="toCurrency">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="JPY">JPY</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                    <div class="converterActions">
+                        <button id="convertBtn">Convert</button>
+                        <button id="addFavoriteBtn">Add to Favorites</button>
+                    </div>
+                    <div class="exchangeRateDisplay">
+                        <p>1 EUR = 1.06 USD</p>
+                    </div>
+                    <div class="resultBox">
+                        <p id="resultText">Result will appear here...</p>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer class="card footer">
             <div class="footerBrand">© 2025 FXHub</div>
