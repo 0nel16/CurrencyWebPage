@@ -115,3 +115,41 @@ html, body{
 #btnAccount:active{
     transform: scale(1);
 }
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 1rem;
+    color: #94a3b8;
+}
+
+.footerNav{
+    display: flex;
+    gap: 20px;
+}
+
+.footerNav a{
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footerNav a:hover{
+    color: #3b82f6;
+}
+
+.footerSocial{
+    display: flex;
+    gap: 15px;
+}
+
+.footerSocial a{
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.footerSocial a:hover{
+    color: #3b82f6;
+}
