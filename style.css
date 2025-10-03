@@ -217,7 +217,6 @@ html, body{
 
 .converterRow select, 
 .converterRow input{
-    display: flex;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -266,16 +265,93 @@ html, body{
   text-align: center;
 }
 
+.mobileExchangeRates{
+    display: none;
+}
+
 @media (max-width: 1024px){
     .exchangeRates{
         display: none;
     }
+    .sidebar{
+        max-width: 250px;
+    }
+    .headerBrand{
+        font-size: 1.4rem;
+    }
+    #btnAccount{
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .converter{
+        padding: 20px;
+    }
+    .footer{
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
 }
 
 @media (max-width: 768px){
-
+    .converterRow{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .converterActions{
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 480px){
-
+    .main{
+       flex-direction: column; 
+    }
+    .header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .sidebar{
+        flex: none;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .content{
+        flex: none;
+        width: 100%;
+    }
+    .exchangeRates{
+        display: none;
+    }
+    .favoritesList{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .converterRow{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .converterActions{
+        flex-direction: column;
+    }
+    .converterActions{
+        flex-direction: column;
+    }
+    .converterActions button{
+        width: 100%;
+    }
+    .mobileExchangeRates{
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        margin: 20px 10px;
+        padding-bottom: 10px;
+    }
+    .mobileExchangeRates::-webkit-scrollbar {
+    display: none;
+    }
+    .exchangeRateDisplay{
+        font-size: 0.9rem;
+        padding: 0;
+    }
 }
