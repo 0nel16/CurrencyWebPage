@@ -5,7 +5,7 @@
 html, body{
     height: 100%;
     margin: 0;
-    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    background: linear-gradient(45deg, #0f172a, #1e1b4b);
 }
 
 .container {
@@ -17,7 +17,7 @@ html, body{
 }
 
 .card {
-    background: linear-gradient(145deg, #1e293b, #111827);
+    background: linear-gradient(45deg, #1e293b, #111827);
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 8px;
     padding: 12px;
@@ -41,13 +41,14 @@ html, body{
 .sidebar {
     flex: 0 0 25%;
     max-width: 340px;
-    background: #717171;
+    background: #1e293b;
+    min-width: 0;
 }
 
 .content {
     flex: 1 1 auto;
     min-width: 0;
-    background: #717171;
+    background: #1e293b;
 }
 
 .headerBrand{
@@ -78,6 +79,7 @@ html, body{
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    color: #9ca3af;
 }
 
 .cardRates{
@@ -95,7 +97,8 @@ html, body{
 #btnAccount{
     margin: 10px;
     padding: 15px 30px;
-    box-shadow: 0px 0px 18px -3px rgba(139, 92, 246, 0.9);    background-image: linear-gradient(45deg, #3b82f6 0%, #7c3aed 51%, #3b82f6 100%);
+    background: linear-gradient(45deg, #11418e, #2e0b4f);
+    box-shadow: 0 4px 10px rgba(147, 51, 234, 0.4);
     border: 0px;
     border-radius: 25px;
     color: white;
@@ -108,12 +111,7 @@ html, body{
 }
 
 #btnAccount:hover{
-    background-position: center right;
-    filter: brightness(1.15);
-}
-
-#btnAccount:active{
-    transform: scale(1);
+    filter: brightness(1.5);
 }
 
 .footer{
@@ -122,7 +120,7 @@ html, body{
     align-items: center;
     padding: 0 20px;
     font-size: 1rem;
-    color: #94a3b8;
+    color: #9ca3af;
 }
 
 .footerNav{
@@ -131,7 +129,7 @@ html, body{
 }
 
 .footerNav a{
-    color: #94a3b8;
+    color: #9ca3af;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -146,7 +144,7 @@ html, body{
 }
 
 .footerSocial a{
-    color: #94a3b8;
+    color: #9ca3af;
     transition: color 0.3s ease;
 }
 
@@ -157,7 +155,7 @@ html, body{
 .sidebar h2{
     font-size: 1.4rem;
     margin-bottom: 30px;
-    color: #ffffff;
+    color: #f3f4f6;
 }
 
 .favoritesList{
@@ -174,7 +172,7 @@ html, body{
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.14);
-    color: #ffffff;
+    color: #d1d5db;
     transition: 0.3s ease;
 }
 
@@ -197,7 +195,7 @@ html, body{
 
 .content h2{
     margin-bottom: 30px;
-    color: #ffffff;
+    color: #f3f4f6;
 }
 
 .converter{
@@ -230,14 +228,14 @@ html, body{
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background: linear-gradient(45deg, #3b82f6, #7c3aed);
-    color: #ffffff;
+    background: linear-gradient(45deg, #1e293b, #5a00f6);
+    color: #f3f4f6;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .converterActions button:hover{
-    filter: brightness(1.15);
+    filter: brightness(1.5);
 }
 
 .converterActions{
@@ -249,7 +247,7 @@ html, body{
 
 .exchangeRateDisplay{
     font-size: 1.2rem;
-    color: #ffffff;
+    color: #d1d5db;
     text-align: center;
     padding: 20px;
 }
@@ -260,7 +258,7 @@ html, body{
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #ffffff;
+  color: #d1d5db;
   font-size: 1.3rem;
   text-align: center;
 }
@@ -326,13 +324,6 @@ html, body{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
-    }
-    .converterRow{
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .converterActions{
-        flex-direction: column;
     }
     .converterActions{
         flex-direction: column;
