@@ -211,6 +211,7 @@ html, body{
     display: flex;
     gap: 10px;
     align-items: center;
+    color: #ffffff;
 }
 
 .converterRow select, 
@@ -221,6 +222,13 @@ html, body{
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
     flex: 1;
+}
+
+.converterActions{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
 }
 
 .converterActions button{
@@ -238,13 +246,6 @@ html, body{
     filter: brightness(1.5);
 }
 
-.converterActions{
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    gap: 20px;
-}
-
 .exchangeRateDisplay{
     font-size: 1.2rem;
     color: #d1d5db;
@@ -253,14 +254,14 @@ html, body{
 }
 
 .resultBox {
-  margin-top: 15px;
-  padding: 12px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #d1d5db;
-  font-size: 1.3rem;
-  text-align: center;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #d1d5db;
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 .mobileExchangeRates{
@@ -302,7 +303,7 @@ html, body{
 
 @media (max-width: 480px){
     .main{
-       flex-direction: column; 
+        flex-direction: column; 
     }
     .header{
         flex-direction: row;
@@ -339,7 +340,7 @@ html, body{
         padding-bottom: 10px;
     }
     .mobileExchangeRates::-webkit-scrollbar {
-    display: none;
+        display: none;
     }
     .exchangeRateDisplay{
         font-size: 0.9rem;
