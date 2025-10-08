@@ -30,6 +30,8 @@ html, body{
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
 .main {
@@ -74,24 +76,28 @@ html, body{
 
 .exchangeRates{
     display: flex;
-    flex: 1 1 auto;
-    gap: 8px;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1;               /* takes remaining space between logo and button */
+    flex-shrink: 1;        /* allows shrinking when space is tight */
     overflow: hidden;
-    color: #9ca3af;
+    min-width: 0;
 }
 
 .cardRates{
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
-    padding: 6px 10px;
+    padding: 6px 12px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.14);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 100px;
 }
 
 #btnAccount{
@@ -108,6 +114,7 @@ html, body{
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 0.5px;
+    flex-shrink: 0;
 }
 
 #btnAccount:hover{
