@@ -27,7 +27,7 @@
             <aside class="card sidebar">
                 <h2>Favorites</h2>
                 <div class="favoritesList">
-                    <div class="favoriteItem">
+                    <!-- <div class="favoriteItem">
                         <span>EUR/USD</span>
                         <button class="removeBtn">x</button>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="favoriteItem">
                         <span>CAD/USD</span>
                         <button class="removeBtn">x</button>
-                    </div>
+                    </div> -->
                 </div>
             </aside>
             <section class="card content">
@@ -59,14 +59,24 @@
                             <option value="USD">USD</option>
                             <option value="GBP">GBP</option>
                             <option value="JPY">JPY</option>
+                            <option value="RON">RON</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="NZD">NZD</option>
+                            <option value="CHF">CHF</option>
                         </select>
-                        <input type="number" id="amount" placeholder="Enter amount">
+                        <input type="number" id="amount" placeholder="Enter amount" min="0">
                         <label for="toCurrency">To</label>
                         <select id="toCurrency">
-                            <option value="USD">USD</option>
+                            <option value="RON">RON</option>
                             <option value="EUR">EUR</option>
-                            <option value="JPY">JPY</option>
+                            <option value="USD">USD</option>
                             <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="NZD">NZD</option>
+                            <option value="CHF">CHF</option>
                         </select>
                     </div>
                     <div class="converterActions">
@@ -74,7 +84,7 @@
                         <button id="addFavoriteBtn">Add to Favorites</button>
                     </div>
                     <div class="exchangeRateDisplay">
-                        <p>1 EUR = 1.06 USD</p>
+                        <p></p>
                     </div>
                     <div class="resultBox">
                         <p id="resultText">Result will appear here...</p>
@@ -131,5 +141,6 @@
             </div>
         </footer>
     </div>
+    <div id="popupContainer"></div>
 </body>
 </html>
