@@ -1,13 +1,17 @@
+//Select all elements in the header showing live exchange rates - example USD/EUR
 const cardRates = document.querySelectorAll(".cardRates");
 
+//Fetches the latest exchange rates from local node server endpoint api rates
 async function updateRates() {
   try {
+    //Retrieves data from the Frankfurter API
     const response = await fetch("/api/rates");
     const data = await response.json();
     if (!data.rates) throw new Error("No rates found in API response");
 
     const base = data.base; // should be EUR
-
+    
+    //Loop every .cardRates elements and determine what pair it represents
     cardRates.forEach((card) => {
       const pair = card.dataset.pair;
       const [from, to] = pair.split("/");
@@ -26,6 +30,7 @@ async function updateRates() {
       }
 
       if (rate) {
+        //When the rate updates succesfully, text color flashes green for 0.6s
         const oldValue = card.textContent;
         const newValue = `${pair} ${rate.toFixed(2)}`;
         card.textContent = newValue;
@@ -47,8 +52,7 @@ async function updateRates() {
 updateRates();
 setInterval(updateRates, 30000); // refresh every 30s
 
-// ----- Currency Converter -----
-// --- Currency Converter Exchange Rate Display Logic ---
+//Currency Converter Exchange Rate Display Logic
 async function updateExchangeRate() {
   const from = document.getElementById("fromCurrency").value;
   const to = document.getElementById("toCurrency").value;
@@ -58,6 +62,7 @@ async function updateExchangeRate() {
     const response = await fetch(`https://api.frankfurter.app/latest?from=${from}&to=${to}`);
     const data = await response.json();
 
+    //If the API don't provide valid rates data or does not include the selected currency, show an error.
     if (!data.rates || !data.rates[to]) {
       exchangeRateDisplay.textContent = "Unable to fetch rate.";
       return;
@@ -81,7 +86,7 @@ document.getElementById("convertBtn").addEventListener("click", async () => {
   const exchangeRateDisplay = document.querySelector(".exchangeRateDisplay p");
 
   if (!amount || amount <= 0) {
-    resultText.textContent = "⚠️ Please enter a valid amount.";
+    resultText.textContent = "Please enter a valid amount.";
     return;
   }
 
@@ -130,7 +135,7 @@ function addFavoriteToDom(pair) {
     item.innerHTML = '<span>' + pair + '</span> <button class="removeBtn">x</button>';
 
         // When clicking anywhere on the favorite (except the remove button)
-    item.addEventListener("click", function (event) {
+        item.addEventListener("click", function (event) {
         // Ignore clicks on the remove button
         if (event.target.classList.contains("removeBtn")) return;
 
@@ -179,7 +184,7 @@ addFavoriteBtn.addEventListener("click", function () {
         body: JSON.stringify({ pair: pair })
     })
         .then(function () {
-            addFavoriteToDom(pair);
+          addFavoriteToDom(pair);
         });
 });
 
