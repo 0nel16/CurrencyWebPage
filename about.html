@@ -24,71 +24,15 @@
         <div><a href="#" id="btnAccount">Log in</a></div>
       </header>
       <main class="main">
-        <aside class="card sidebar restricted">
-          <h2>Favorites</h2>
-          <div class="favoritesList"></div>
-        </aside>
         <section class="card content">
-          <h2>Currency Converter</h2>
-          <div class="converter">
-            <div class="converterRow">
-              <label for="fromCurrency">From</label>
-              <select id="fromCurrency">
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-                <option value="JPY">JPY</option>
-                <option value="RON">RON</option>
-                <option value="AUD">AUD</option>
-                <option value="CAD">CAD</option>
-                <option value="NZD">NZD</option>
-                <option value="CHF">CHF</option>
-              </select>
-              <input
-                type="number"
-                id="amount"
-                placeholder="Enter amount"
-                min="0"
-              />
-              <label for="toCurrency">To</label>
-              <select id="toCurrency">
-                <option value="RON">RON</option>
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-                <option value="JPY">JPY</option>
-                <option value="AUD">AUD</option>
-                <option value="CAD">CAD</option>
-                <option value="NZD">NZD</option>
-                <option value="CHF">CHF</option>
-              </select>
-            </div>
-            <div class="converterActions">
-              <button id="convertBtn">Convert</button>
-              <button id="addFavoriteBtn" class="restricted">
-                Add to Favorites
-              </button>
-            </div>
-            <div class="exchangeRateDisplay">
-              <p></p>
-            </div>
-            <div class="resultBox">
-              <p id="resultText">Result will appear here...</p>
-            </div>
-            <div class="historyBox restricted">
-              <h3>Conversion History</h3>
-              <ul id="historyList"></ul>
-            </div>
-          </div>
+          <h2>About FXHub</h2>
+          <p class="footerTabs">
+            FXHub is a simple and educational web project that provides
+            real-time currency exchange rates and conversion tools. Built with
+            HTML, CSS, and JavaScript, it demonstrates how to connect front-end
+            interfaces with live APIs and Node.js backend.
+          </p>
         </section>
-        <div class="mobileExchangeRates">
-          <div class="cardRates" data-pair="EUR/USD">EUR/USD</div>
-          <div class="cardRates" data-pair="GBP/USD">GBP/USD</div>
-          <div class="cardRates" data-pair="EUR/RON">EUR/RON</div>
-          <div class="cardRates" data-pair="AUD/USD">AUD/USD</div>
-          <div class="cardRates" data-pair="USD/CAD">USD/CAD</div>
-          <div class="cardRates" data-pair="EUR/GBP">EUR/GBP</div>
-        </div>
       </main>
       <footer class="card footer">
         <div class="footerBrand">© 2025 FXHub</div>
@@ -103,12 +47,8 @@
             href="https://github.com/0nel16"
             target="_blank"
             aria-label="GitHub"
-            ><svg
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+          >
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M12 0.297c-6.63 0-12 5.373-12 12 
                         0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 

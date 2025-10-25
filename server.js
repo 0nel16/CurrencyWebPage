@@ -18,7 +18,9 @@ if (!fs.existsSync(favoritesFolder)) {
 //Get live exchange rates using the Frankfurter API
 app.get("/api/rates", async (req, res) => {
   try {
-    const response = await fetch("https://api.frankfurter.app/latest?from=EUR&to=USD,GBP,CHF,AUD,CAD,RON");
+    const response = await fetch(
+      "https://api.frankfurter.app/latest?from=EUR&to=USD,GBP,CHF,AUD,CAD,RON"
+    );
     const data = await response.json();
     res.json(data);
   } catch (error) {
@@ -29,22 +31,29 @@ app.get("/api/rates", async (req, res) => {
 });
 
 //To add a new favorite pair
-app.post("/favorites", function (req, res){
+app.post("/favorites", function (req, res) {
   const pair = req.body.pair; //Extract the currency pair - example EUR/USD
-  if(!pair){
+  if (!pair || !pair.includes("/")) {
     //If data is not provided prevent saving it
-    return res.status(400).json({ error: "Missing currency pair"});
+    return res.status(400).json({ error: "Missing currency pair" });
   }
 
   //Load existing favorites if file exists
   let favorites = [];
   if (fs.existsSync(favoritesFile)) {
-    favorites = fs.readFileSync(favoritesFile, "utf-8").split("\n").filter(Boolean);
+    favorites = fs
+      .readFileSync(favoritesFile, "utf-8")
+      .split("\n")
+      .filter(Boolean);
   }
 
-  //Avoid duplicates
-  if (favorites.indexOf(pair) === -1) {
-    fs.appendFileSync(favoritesFile, pair + "\n");
+  //Avoid duplicates and add a newline if file already has content
+  if (!favorites.includes(pair)) {
+    let prefix = "";
+    if (favorites.length > 0) {
+      prefix = "\n";
+    }
+    fs.appendFileSync(favoritesFile, prefix + pair);
   }
 
   res.json({ success: true }); //Confirmation for frontend
@@ -62,7 +71,8 @@ app.delete("/favorites", function (req, res) {
   }
 
   //Remove the selected pair from the list and rewrite the file
-  const updated = fs.readFileSync(favoritesFile, "utf-8")
+  const updated = fs
+    .readFileSync(favoritesFile, "utf-8")
     .split("\n")
     .filter(Boolean)
     .filter(function (line) {
@@ -86,7 +96,34 @@ app.get("/favorites/list", function (req, res) {
     .split("\n")
     .filter(Boolean);
   res.json(data);
-})
+});
+
+// Log in route
+app.post("/login", function (req, res) {
+  const { username, password } = req.body;
+
+  // Read stored credentials
+  const loginFile = path.join(favoritesFolder, "login.txt");
+  if (!fs.existsSync(loginFile)) {
+    return res.status(500).json({ error: "Login file missing" });
+  }
+
+  const lines = fs.readFileSync(loginFile, "utf-8").split("\n");
+  if (lines.length < 2) {
+    return res.status(500).json({ error: "Login file malformed" });
+  }
+  const userLine = lines.find((line) => line.startsWith("user:"));
+  const passLine = lines.find((line) => line.startsWith("pass:"));
+
+  const storedUser = userLine ? userLine.split(":")[1].trim() : "";
+  const storedPass = passLine ? passLine.split(":")[1].trim() : "";
+
+  if (username === storedUser && password === storedPass) {
+    res.json({ success: true });
+  } else {
+    res.status(401).json({ success: false, message: "Invalid credentials" });
+  }
+});
 
 //Start the server
 app.listen(3000, () => console.log("Server running on http://localhost:3000"));
